@@ -9,21 +9,25 @@ public class Termproject2 {
 		
 		System.out.println("생성할 데이터의 개수를 입력해주세요");
 		int data_n=sc.nextInt();
+		//int data_n=1000000;
 	
 		System.out.println("렌덤으로 생성할 구간의 개수를 입력해주세요");
 		int range_n=sc.nextInt();
+		//int range_n=5;
 		long start = System.currentTimeMillis();
 		
-		int sum =0;
+		
 		int arr[]=new int[data_n];
 		for(int i=0;i<data_n;i++) {
 			arr[i]=rn.nextInt();//n개의 데이터 셍성
+			System.out.print(arr[i]+"  ");
 		}
 		
 		
 		for(int j=0;j<range_n;j++) {
 			int a=0;
 			int b=0;
+			int sum =0;
 			while(true) {
 				a=rn.nextInt(data_n);//구간 시작점
 				b=rn.nextInt(data_n);//구간 끝 점
@@ -34,9 +38,9 @@ public class Termproject2 {
 			int max = arr[a];
 		
 			for(int k=a;k<=b;k++) {
+				sum=sum+arr[k];
 				if(min>=arr[k]) min=arr[k];
 				if(max<=arr[k]) max=arr[k];
-				sum=sum+arr[k];
 				}
 			System.out.println("최솟값: "+min);
 			System.out.println("최댓값: "+max);
